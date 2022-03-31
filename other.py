@@ -28,7 +28,7 @@ def test(clusters, centers):    # testovanie
         distance = 0
         for point in clusters[i]:
             distance += calc_d(point, centers[i])
-            
+
         if distance // len(clusters[i]) > 500:
             failed += 1
 

@@ -61,7 +61,7 @@ centers, old_clusters = gen_centers(all_points, k)  # vytvorenie centier inicial
 print("-------------------------")
 print("Kmeans centroid")
 clusters_centroid, centers_centroid = k_centroids(all_points, k, deepcopy(centers), deepcopy(old_clusters)) # klastrovanie
-#test(clusters_centroid, centers_centroid)
+test(clusters_centroid, centers_centroid)
 
 init_centers = np.array(centers)
 initC_x, initC_y = init_centers.T
@@ -82,7 +82,7 @@ sns.scatterplot(x=x, y=y, marker="x", color="k", linewidth=2, s=40, ax=axes[0][0
 print("-------------------------")
 print("Kmeans medoid")
 clusters_medoid, centers_medoid = k_medoids(all_points, k, deepcopy(centers), deepcopy(old_clusters))   # klastrovanie
-#test(clusters_medoid, centers_medoid)
+test(clusters_medoid, centers_medoid)
 
 for cluster in clusters_medoid:     # vykreslovanie
 
@@ -99,7 +99,7 @@ sns.scatterplot(x=x, y=y, marker="x", color="k", linewidth=2, s=40, ax=axes[0][1
 print("-------------------------")
 print("Divisions")
 clursters_divisive, centers_devisive = k_divisions(deepcopy(all_points), k)     # klastrovanie
-#test(clursters_divisive, centers_devisive)
+test(clursters_divisive, centers_devisive)
 for cluster in clursters_divisive:  # vykreslovanie
 
     cluster = np.array(cluster)
@@ -115,7 +115,7 @@ print("-------------------------")
 print("Agglomerative")
 start = time.time()
 clursters_agglomerative, centers_agglomerative = k_agglomerative(all_points, k)     # klastrovanie
-#test(clursters_agglomerative, centers_agglomerative)
+test(clursters_agglomerative, centers_agglomerative)
 print(time.time()-start)
 for cluster in clursters_agglomerative:     # vykreslovanie
 
